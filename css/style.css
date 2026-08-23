@@ -805,7 +805,22 @@ section[id] { scroll-margin-top: 78px; }
   letter-spacing: .5px;
 }
 
-.gallery-item-lg img { height: 320px; }
+.gallery-item-wide { grid-column: 1 / -1; }
+
+.gallery-item-wide img {
+  height: 420px;
+  object-fit: contain;
+  background: #fff;
+}
+
+.gallery-item-wide figcaption {
+  position: static;
+  background: none;
+  color: var(--muted);
+  padding: 10px 4px 0;
+  text-align: center;
+  font-size: 13px;
+}
 
 /* ---------- 联系信息 ---------- */
 .contact-company {
