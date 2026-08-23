@@ -967,6 +967,13 @@ textarea { resize: vertical; }
   max-width: 300px;
 }
 
+.footer-founder {
+  margin-top: 10px;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--gold-soft);
+}
+
 .footer-col h4 {
   color: #fff;
   font-size: 15.5px;
