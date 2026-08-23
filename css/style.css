@@ -1,5 +1,5 @@
 /* ============================================================
-   DAFU FINANCE &amp; TAX 达富财税 - 官网样式
+   DAFU FINANCE 达富财务 - 官网样式
    配色：深海军蓝 + 金色
    ============================================================ */
 
@@ -129,14 +129,16 @@ section[id] { scroll-margin-top: 78px; }
 .brand-mark {
   width: 42px; height: 42px;
   border-radius: 10px;
-  background: linear-gradient(135deg, #E3C97E, var(--gold) 60%, var(--gold-deep));
-  color: var(--navy);
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: 700;
-  font-size: 24px;
+  overflow: hidden;
   display: grid;
   place-items: center;
   box-shadow: 0 4px 14px rgba(201, 162, 75, .4);
+}
+
+.brand-mark img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .brand-text {
@@ -610,59 +612,20 @@ section[id] { scroll-margin-top: 78px; }
 
 .about-visual { position: relative; }
 
-.about-panel {
+.about-photo {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(150deg, #0A1F44, #123062 60%, #1B3F85);
   border-radius: 22px;
-  padding: 48px 40px;
-  color: #fff;
   min-height: 380px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   box-shadow: var(--shadow-md);
+  border: 1px solid var(--line);
 }
 
-.about-panel::before {
-  content: '';
-  position: absolute;
-  width: 260px; height: 260px;
-  border: 1px dashed rgba(201, 162, 75, .35);
-  border-radius: 50%;
-  right: -80px; top: -80px;
-}
-
-.about-panel-top {
-  letter-spacing: 4px;
-  font-size: 13px;
-  color: var(--gold-soft);
-  font-weight: 700;
-}
-
-.about-panel p {
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 1.6;
-  max-width: 270px;
-}
-
-.about-panel-year {
-  font-size: 54px;
-  font-weight: 900;
-  color: var(--gold-soft);
-  font-family: Georgia, "Times New Roman", serif;
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
-}
-
-.about-panel-year small {
-  font-size: 15px;
-  font-weight: 500;
-  color: rgba(255, 255, 255, .7);
-  font-family: var(--font);
-  letter-spacing: 1px;
+.about-photo img {
+  width: 100%; height: 100%;
+  min-height: 380px;
+  object-fit: cover;
+  display: block;
 }
 
 .about-badge {
@@ -678,7 +641,14 @@ section[id] { scroll-margin-top: 78px; }
   gap: 12px;
 }
 
-.about-badge svg { width: 34px; height: 34px; color: var(--gold); }
+.about-avatar {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gold);
+  flex-shrink: 0;
+}
+
 .about-badge small { display: block; color: var(--muted); font-size: 11.5px; margin-bottom: 2px; }
 .about-badge strong { color: var(--ink); font-size: 14.5px; }
 
@@ -727,7 +697,7 @@ section[id] { scroll-margin-top: 78px; }
 
 .why-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
@@ -777,6 +747,9 @@ section[id] { scroll-margin-top: 78px; }
   flex-direction: column;
 }
 
+.testi-card h3 { font-size: 18px; color: var(--ink); margin-bottom: 10px; }
+.testi-card p { color: var(--muted); font-size: 14px; line-height: 1.75; }
+
 .stars { color: var(--gold); letter-spacing: 3px; font-size: 15px; margin-bottom: 16px; }
 
 .testi-card blockquote {
@@ -794,6 +767,53 @@ section[id] { scroll-margin-top: 78px; }
 
 .testi-card figcaption strong { display: block; color: var(--ink); font-size: 15px; }
 .testi-card figcaption span { color: var(--muted); font-size: 13px; }
+
+/* ---------- 公司风采 ---------- */
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.gallery-item {
+  position: relative;
+  margin: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+  transition: transform .5s ease;
+}
+
+.gallery-item:hover img { transform: scale(1.03); }
+
+.gallery-item figcaption {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 32px 18px 14px;
+  background: linear-gradient(transparent, rgba(7, 22, 50, .82));
+  color: #fff;
+  font-size: 13.5px;
+  letter-spacing: .5px;
+}
+
+.gallery-item-lg img { height: 320px; }
+
+/* ---------- 联系信息 ---------- */
+.contact-company {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gold);
+  margin: -8px 0 24px;
+}
 
 /* ---------- 联系我们 ---------- */
 .contact { background: var(--bg); }
@@ -1090,7 +1110,8 @@ textarea { resize: vertical; }
 @media (max-width: 560px) {
   .services-grid,
   .why-grid,
-  .testi-grid { grid-template-columns: 1fr; }
+  .testi-grid,
+  .gallery { grid-template-columns: 1fr; }
 
   .form-row { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 28px; }
