@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "siteId": "dafu-finance",
+  "name": "dafu-finance",
+  "kind": "react-vite",
+  "devCommand": "vite",
+  "buildCommand": "vite build",
+  "outputDir": "dist",
+  "entry": "index.html",
+  "databaseUrl": "",
+  "createdBy": "accio-site-builder",
+  "createdAt": "2026-08-23T14:53:54.410Z"
+}
